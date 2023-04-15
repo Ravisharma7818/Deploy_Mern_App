@@ -34,7 +34,7 @@ export function ShowTodoList() {
     useEffect(
         function () {
             axios
-                .get("http://localhost:8000/api/todo")
+                .get("https://mern-deploy-20p6.onrender.com")
                 .then((res) => {
                     console.log(res.data);
                     setTodo(res.data);
@@ -57,7 +57,7 @@ export function ShowTodoList() {
     }
 
     function handleDelete(e) {
-        axios.delete(`http://localhost:8000/api/todo/${e.target.name}`);
+        axios.delete(`https://mern-deploy-20p6.onrender.com/${e.target.name}`);
 
         setTodo((data) => {
             return data.filter((todo) => todo._id !== e.target.name);
